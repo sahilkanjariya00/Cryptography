@@ -1,0 +1,18 @@
+RSA key generation :
+g++ key_generation.cpp -o rsa_keygen_manual -lcryptopp && ./rsa_keygen_manual
+
+Encrypt :
+g++ encrypt.cpp -o encrypt -lcryptopp && ./encrypt public_key.bin data.txt cipher.bin
+
+Decryption :
+g++ decrypt.cpp -o decrypt -lcryptopp && ./decrypt cipher.bin private_key.bin dData.txt
+
+Signs :
+g++ sign.cpp -o sign -lcryptopp && ./sign private_key.bin data.txt signature.bin
+
+Verify :
+g++ verify.cpp -o verify -lcryptopp && ./verify ublic_key.bin dData.txt signature.bin
+
+g++ key_generation.cpp -o rsa_keygen_manual -lcryptopp && ./rsa_keygen_manual && g++ encrypt.cpp -o encrypt -lcryptopp && ./encrypt public_key.bin data.txt cipher.bin && g++ decrypt.cpp -o decrypt -lcryptopp && ./decrypt cipher.bin private_key.bin dData.txt && g++ sign.cpp -o sign -lcryptopp && ./sign private_key.bin data.txt signature.bin && g++ verify.cpp -o verify -lcryptopp && ./verify public_key.bin dData.txt signature.bin
+
+rm private_key.bin && rm public_key.bin && rm cipher.bin && rm dData.txt && rm decrypt && rm encrypt && rm rsa_keygen_manual && rm sign && rm signature.bin && rm verify
