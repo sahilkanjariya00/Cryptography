@@ -3,14 +3,14 @@
 ## RSA key generation
 g++ keygen.cpp -o rsa_keygen_manual -lcryptopp && ./rsa_keygen_manual
 
-## Encrypt
+## Encryption
 g++ encrypt.cpp -o encrypt -lcryptopp && ./encrypt public_key.bin msg.txt
 
 ## Decryption
 g++ decrypt.cpp -o decrypt -lcryptopp && ./decrypt private_key.bin cipher.bin
 
-## Signs
+## Signature
 g++ sign.cpp -o sign -lcryptopp && ./sign private_key.bin msg.txt
 
-## Verify
+## Signature Verification
 g++ verify.cpp -o verify -lcryptopp && ./verify public_key.bin dec_msg.txt sign.bin
