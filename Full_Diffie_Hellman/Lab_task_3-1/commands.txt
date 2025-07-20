@@ -1,0 +1,9 @@
+g++ -o keygen keygen.cpp -lcryptopp -std=c++11 && ./keygen
+g++ -o encryption encryption.cpp -lcryptopp -std=c++11 && ./encryption
+g++ -o decryption decryption.cpp -lcryptopp -std=c++11 && ./decryption
+g++ -o sign sign.cpp -lcryptopp -std=c++11 && ./sign
+g++ -o verify verify.cpp -lcryptopp -std=c++11 && ./verify
+
+g++ -o keygen keygen.cpp -lcryptopp -std=c++11 && ./keygen && g++ -o encryption encryption.cpp -lcryptopp -std=c++11 && ./encryption && g++ -o decryption decryption.cpp -lcryptopp -std=c++11 && ./decryption && g++ -o sign sign.cpp -lcryptopp -std=c++11 && ./sign && g++ -o verify verify.cpp -lcryptopp -std=c++11 && ./verify
+
+rm ciphertext.bin && rm decrypted_message.txt && rm decryption && rm encryption && rm k_private.bin && rm keygen && rm private_key.bin && rm public_key.bin && rm shared_secret.bin && rm sign && rm signature.bin && rm verify
