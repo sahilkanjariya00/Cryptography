@@ -1,0 +1,3 @@
+g++ alice.cpp -o alice && g++ bob.cpp -o bob && g++ bobSh.cpp -o bobsh && ./bob && ./alice && ./bobsh
+
+rm alice && rm alice_private.txt && rm alice_public.txt && rm bob && rm bob_private.txt && rm bob_public.txt && rm bobsh && rm shared_secret_bob.txt
