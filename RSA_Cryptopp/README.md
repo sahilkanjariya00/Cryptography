@@ -1,0 +1,19 @@
+# Secure Message Transmission Using Hybrid Cryptography (RSA + AES + Digital Signature) using CRYPTOPP
+
+## Generate the public key and private key pair : 
+g++ -o generate_keys generate_keys.cpp -lcryptopp -std=c++11 && ./generate_keys Alice_private_key.bin Alice_public_key.bin && ./generate_keys Bob_private_key.bin Bob_public_key.bin
+
+## Generate the digital signature : 
+g++ -o digital_signature digital_signature.cpp -lcryptopp -std=c++11 && ./digital_signature Alice_private_key.bin data.txt
+
+## Encrypting the data file and digital signature : 
+g++ -o encryption encrypt_message.cpp -lcryptopp -std=c++11 && ./encryption Bob_public_key.bin data.txt signature.bin encrypted
+
+## Decrypting the encrypted data : 
+g++ -o decryption decrypt_message.cpp -lcryptopp -std=c++11 && ./decryption Bob_private_key.bin encrypted_data.bin encrypted_key.bin decrypted
+
+## Signature verification : 
+g++ -o verify_signature verify_signature.cpp -lcryptopp -std=c++11 && ./verify_signature Alice_public_key.bin decrypted_data.txt decrypted_signature.bin
+
+## Single command:
+g++ -o generate_keys generate_keys.cpp -lcryptopp -std=c++11 && ./generate_keys Alice_private_key.bin Alice_public_key.bin && ./generate_keys Bob_private_key.bin Bob_public_key.bin && g++ -o digital_signature digital_signature.cpp -lcryptopp -std=c++11 && ./digital_signature Alice_private_key.bin data.txt && g++ -o encryption encrypt_message.cpp -lcryptopp -std=c++11 && ./encryption Bob_public_key.bin data.txt signature.bin encrypted && g++ -o decryption decrypt_message.cpp -lcryptopp -std=c++11 && ./decryption Bob_private_key.bin encrypted_data.bin encrypted_key.bin decrypted && g++ -o verify_signature verify_signature.cpp -lcryptopp -std=c++11 && ./verify_signature Alice_public_key.bin decrypted_data.txt decrypted_signature.bin

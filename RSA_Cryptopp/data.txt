@@ -1,0 +1,16 @@
+INSTALLATION:
+
+Step-1: Update & Upgrade
+
+Step-2: sudo apt-cache pkgnames | grep -i crypto++
+
+Step-3: sudo apt-get install libcrypto++-utils
+Step-4: sudo apt-get install libcrypto++8
+Step-5: sudo apt-get install libcrypto++-dev
+Step-6: sudo apt-get install libcrypto++-doc
+
+
+COMPILATION:
+
+g++ myprog.cpp -lcryptopp
+
